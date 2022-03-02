@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Boggle!</title>
+    <style>
+        table, th, td {
+          border:1px solid black;
+          margin: auto;
+        }
+        td {
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; ">Play Boggle</h1>
+    
+    <p style="text-align: center; 
+              padding-top: 10px; 
+              float: left; 
+              margin-left: 48%;">
+        Score: 
+        <b>0</b>
+    </p>
+   
+    <section>
+        <table>
+            {% for i in board %}
+                <tr>
+                    {% for j in i %}
+                        <td>{{j}}</td>
+                    {% endfor %}    
+                </tr></br>
+            {% endfor %}
+        </table>
+    </section>
+    
+    <form style="text-align: center; padding-top: 10px;" class="form">
+        <label for="wrd">Enter the Word</label>
+        <input class="txt" id="wrd" type="text" autofocus name="word">
+        <button>Submit</button>
+    </form>
+    
+    <!-- for showing any message  -->
+    <p class="msg"></b></p>
+
+    <!-- for showing the list of submitted words -->
+    <p class="words">
+    </p>
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="/static/app.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+</body>
+</html>
